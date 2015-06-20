@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="war" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,84 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardtable_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Tk3-xc-xQ2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.47561910548995523" green="0.48313711550460475" blue="0.58848248106060608" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzD-Oj-DVT" userLabel="CardContainerView">
+                                <rect key="frame" x="160" y="215" width="280" height="170"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_bg" translatesAutoresizingMaskIntoConstraints="NO" id="15R-ty-y7G" userLabel="FirstCardImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="170"/>
+                                        <color key="backgroundColor" red="1" green="0.27314070749215602" blue="0.3496269563482961" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="bpf-cz-vl7"/>
+                                            <constraint firstAttribute="width" constant="120" id="uvC-TC-QT5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_bg" translatesAutoresizingMaskIntoConstraints="NO" id="BcP-99-cPe" userLabel="SecondCardImage">
+                                        <rect key="frame" x="160" y="0.0" width="120" height="170"/>
+                                        <color key="backgroundColor" red="0.51976822069592687" green="1" blue="0.44454752837278944" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="9nO-XC-0jx"/>
+                                    <constraint firstItem="15R-ty-y7G" firstAttribute="top" secondItem="mzD-Oj-DVT" secondAttribute="top" id="CDH-AI-456"/>
+                                    <constraint firstItem="BcP-99-cPe" firstAttribute="height" secondItem="15R-ty-y7G" secondAttribute="height" id="Fg2-pN-U7B"/>
+                                    <constraint firstItem="BcP-99-cPe" firstAttribute="top" secondItem="mzD-Oj-DVT" secondAttribute="top" id="IUd-y8-GVe"/>
+                                    <constraint firstAttribute="height" constant="170" id="Nte-pi-Pt5"/>
+                                    <constraint firstItem="15R-ty-y7G" firstAttribute="leading" secondItem="mzD-Oj-DVT" secondAttribute="leading" id="OYr-Oa-JM8"/>
+                                    <constraint firstAttribute="trailing" secondItem="BcP-99-cPe" secondAttribute="trailing" id="ai5-in-rvT"/>
+                                    <constraint firstItem="BcP-99-cPe" firstAttribute="width" secondItem="15R-ty-y7G" secondAttribute="width" id="l9H-WM-u9c"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi2-BM-EmU" userLabel="ButtonContainerView">
+                                <rect key="frame" x="16" y="385" width="568" height="215"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-ya-4A6" userLabel="PlayRound">
+                                        <rect key="frame" x="244" y="93" width="79" height="30"/>
+                                        <state key="normal" title="Play Round">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playRoundTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pKG-Pk-GIf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="BJz-ya-4A6" secondAttribute="centerY" id="Kys-rl-Kz9"/>
+                                    <constraint firstAttribute="centerX" secondItem="BJz-ya-4A6" secondAttribute="centerX" id="aEB-zi-9Jm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tk3-xc-xQ2" secondAttribute="trailing" id="4jB-r6-Obm"/>
+                            <constraint firstItem="Mi2-BM-EmU" firstAttribute="top" secondItem="mzD-Oj-DVT" secondAttribute="bottom" id="V9D-56-hcs"/>
+                            <constraint firstAttribute="centerX" secondItem="mzD-Oj-DVT" secondAttribute="centerX" id="WAr-aC-q7l"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Mi2-BM-EmU" secondAttribute="bottom" id="bwA-Sa-CkI"/>
+                            <constraint firstAttribute="bottom" secondItem="Tk3-xc-xQ2" secondAttribute="bottom" id="cFW-RU-pT4"/>
+                            <constraint firstItem="Mi2-BM-EmU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="hc3-FM-kzK"/>
+                            <constraint firstItem="Tk3-xc-xQ2" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="nAb-S1-EdE"/>
+                            <constraint firstItem="Tk3-xc-xQ2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="puf-ym-kq1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mi2-BM-EmU" secondAttribute="trailing" id="rVv-Yt-qsc"/>
+                            <constraint firstAttribute="centerY" secondItem="mzD-Oj-DVT" secondAttribute="centerY" id="sUK-pe-bjF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Tk3-xc-xQ2" id="pNb-dc-WeE"/>
+                        <outlet property="firstCardImageView" destination="15R-ty-y7G" id="0Go-42-h1N"/>
+                        <outlet property="playRoundButton" destination="BJz-ya-4A6" id="DIL-IQ-x6h"/>
+                        <outlet property="secondCardImageView" destination="BcP-99-cPe" id="f4K-Rv-hiu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="card_bg" width="215" height="313"/>
+        <image name="cardtable_bg" width="333" height="333"/>
+    </resources>
 </document>
